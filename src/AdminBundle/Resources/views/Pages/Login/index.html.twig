@@ -1,0 +1,39 @@
+{% extends '@Admin/Base/index.html.twig' %}
+
+{% block body %}
+    <div class="login">
+        <div class="login__logo"></div>
+        <form action="{{ path('login') }}" method="post">
+            <div class="login__container">
+                {% if error %}
+                    <div class="message">
+                        {{ error.messageKey|trans(error.messageData, 'security') }}
+                    </div>
+                {% endif %}
+                <label for="_username">Username</label>
+                <input type="text"
+                       class="input input-full"
+                       name="_username"
+                       placeholder="Username"
+                       value="{{ last_username }}"
+                       required
+                />
+                <label
+                        for="_password">
+                    Password
+                </label>
+                <input
+                        type="password"
+                        class="input input-full"
+                        name="_password"
+                        placeholder="Password"
+                        required
+                />
+                <button type="submit" class="btn btn-primary btn-full">Login</button>
+                <div class="login__container--footer">
+                    &copy; Copyright 2019
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

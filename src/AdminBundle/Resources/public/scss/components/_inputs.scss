@@ -1,0 +1,12 @@
+.input {
+  background-color: $white;
+  border: 1pt solid $silver;
+  padding: 10pt;
+  margin: 5pt 0;
+  font-size: 1rem;
+  @include border-radius(10pt);
+}
+
+.input-full {
+  width: 100%;
+}
