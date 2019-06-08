@@ -14,15 +14,14 @@
     {% endblock stylesheets %}
 </head>
 <body>
-{#{% if app.request.get('_route') != 'login' %}#}
-{#    {% include('@Admin/Components/sidebar.html.twig') %}#}
-{#    {% include('@Admin/Components/navbar.html.twig') %}#}
-{#    <div class="burger">#}
-{#        <span></span>#}
-{#        <span></span>#}
-{#        <span></span>#}
-{#    </div>#}
-{#{% endif %}#}
+{% if app.request.get('_route') != 'login' %}
+    {% include('@Admin/Components/sidebar.html.twig') %}
+    <div class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+{% endif %}
 {% block body %}
 {% endblock body %}
 

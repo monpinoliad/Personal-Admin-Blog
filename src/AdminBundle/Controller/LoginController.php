@@ -9,7 +9,7 @@ class LoginController extends Controller
     public function indexAction()
     {
         if ($this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
-            return $this->redirect($this->generateUrl('admin_blog'));
+            return $this->redirect($this->generateUrl('admin_articles'));
         }
         $authUtils = $this->get('security.authentication_utils');
         $error = $authUtils->getLastAuthenticationError();

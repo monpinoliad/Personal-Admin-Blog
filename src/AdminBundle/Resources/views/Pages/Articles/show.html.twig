@@ -1,0 +1,25 @@
+{% extends '@Admin/Base/index.html.twig' %}
+
+{% block body %}
+<section class="wrapper">
+    <div class="wrapper__container">
+        <a href="{{ path('admin_articles') }}">
+            <button class="btn-action"><i class="fas fa-plus"></i> Back</button>
+        </a>
+
+        <div class="wrapper__container--content">
+            <h2>{{ article.title }}</h2>
+            <i>{{ article.createdAt|date("M d, o") }}</i><br /><br />
+            <img src="{{ asset('./uploads/article/' ~ article.image) }}" width="200" height="200"/><br /><br />
+            <strong>Summary</strong>
+            <p>
+                {{ article.summary }}
+            </p>
+            <strong>Article Body</strong>
+            <p>
+                {{ article.description }}
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock %}
