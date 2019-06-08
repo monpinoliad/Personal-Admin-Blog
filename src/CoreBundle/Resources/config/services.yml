@@ -1,0 +1,20 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: true
+
+  CoreBundle\EventListener\EntitiesListener:
+      class: CoreBundle\EventListener\EntitiesListener
+      tags:
+        - { name: doctrine.event_listener, event: preUpdate }
+        - { name: doctrine.event_listener, event: prePersist }
+
+  CoreBundle\Utils\DatabaseUtils:
+    public: false
+
+  CoreBundle\Utils\SlugUtils:
+    public: false
+
+  core.manager.article:
+    class: CoreBundle\Manager\ArticleManager

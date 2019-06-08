@@ -6,6 +6,34 @@ logout:
     path:     /logout
     defaults: { _controller: AdminBundle:Login:logout }
 
-admin_blog:
-    path:     /blog
-    defaults: { _controller: AdminBundle:Blog:index }
+admin_articles:
+    path:     /articles
+    defaults: { _controller: AdminBundle:Articles:index }
+
+admin_articles_create:
+    path:     /articles/create
+    defaults: { _controller: AdminBundle:Articles:create }
+
+admin_articles_add:
+    path:     /articles/create/add
+    defaults: { _controller: AdminBundle:Articles:add }
+
+admin_articles_update:
+    path:     /articles/update/{slugId}
+    defaults: { _controller: AdminBundle:Articles:update }
+
+admin_articles_edit:
+    path:     /articles/update/edit/{slugId}
+    defaults: { _controller: AdminBundle:Articles:edit }
+
+admin_articles_show:
+    path:     /articles/{slug}
+    defaults: { _controller: AdminBundle:Articles:show }
+
+admin_articles_delete:
+    path:     /articles/delete/{slugId}
+    defaults: { _controller: AdminBundle:Articles:delete }
+
+admin_articles_api:
+    path:     /articles/api/
+    defaults: { _controller: AdminBundle:Articles:api }

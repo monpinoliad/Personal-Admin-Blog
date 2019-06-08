@@ -1,0 +1,63 @@
+.sidebar {
+  position: fixed;
+  width: 200pt;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  @include box-shadow(3pt, 0, 2.5pt, -2pt, $silver);
+  @include transition(250ms);
+
+  &__logo {
+    position: relative;
+    display: inline-block;
+    height: 50pt;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    top: 15pt;
+    left: 50%;
+    float: left;
+    @include user-select(none);
+    @include transform-translate(-50%, 0);
+
+    &--first-character {
+      float: left;
+      @include rotate(90deg);
+    }
+
+    &--second-character {
+      float: left;
+    }
+  }
+
+  &__lists {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    list-style-type: none;
+    list-style-image: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
+    top: 25pt;
+    padding: 0;
+    margin: 0;
+    float: left;
+
+    .active {
+      border-right: 5pt solid $mine-shaft;
+    }
+
+    &--items {
+      width: 100%;
+      margin: 5pt 0;
+      padding: 15pt 40pt;
+      float: left;
+      @include transition(250ms);
+
+      &:hover {
+        background-color: $mine-shaft;
+        color: $white;
+        @include transition(250ms);
+      }
+    }
+  }
+}

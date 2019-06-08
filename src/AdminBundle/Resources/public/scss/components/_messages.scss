@@ -1,0 +1,23 @@
+.message {
+  background-color: $crimson;
+  width: 100%;
+  padding: 20px;
+  color: $white;
+  margin: 10px 0;
+  @include border-radius(3px);
+}
+
+.message-success {
+  background-color: $success-color;
+  border: 1px solid $success-color-secondary;
+}
+
+.message-error {
+  background-color: $error-color;
+  border: 1px solid $error-color-secondary;
+}
+
+.message-info {
+  background-color: $primary-color;
+  border: 1px solid $primary-color-secondary;
+}

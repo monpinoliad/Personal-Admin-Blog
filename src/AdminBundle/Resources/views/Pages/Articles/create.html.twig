@@ -1,0 +1,44 @@
+{% extends '@Admin/Base/index.html.twig' %}
+
+{% block body %}
+<section class="wrapper">
+    <div class="wrapper__container">
+        <a href="{{ path('admin_articles') }}">
+            <button class="btn-action"><i class="fas fa-plus"></i> Back</button>
+        </a>
+
+        <div class="wrapper__container--content">
+
+            {% if app.flashes('error') is defined %}
+                {% include '@Admin/Components/Messages/error.html.twig' %}
+            {% endif %}
+            {% if app.flashes('info') is defined %}
+                {% include '@Admin/Components/Messages/info.html.twig' %}
+            {% endif %}
+            {% if app.flashes('success') is defined %}
+                {% include '@Admin/Components/Messages/success.html.twig' %}
+            {% endif %}
+
+            {{ form_start(formCreate, {'action': path('admin_articles_add') ,'method': 'POST', 'attr':{'novalidate':'novalidate'}}) }}
+            <label for="articleTitle">Title</label>
+            {{ form_widget(formCreate.title, { 'attr': {'class': 'input input-full'} }) }}
+            {{ form_errors(formCreate.title)}}
+            <label for="articleImage">Image</label>
+            {{ form_widget(formCreate.image, { 'attr': {'class': 'input input-full'} }) }}
+            {{ form_errors(formCreate.image)}}
+            <div class="wrapper__container--content__textarea">
+                <label for="articleSummary">Summary</label>
+                {{ form_widget(formCreate.summary) }}
+                {{ form_errors(formCreate.summary)}}
+            </div>
+            <div class="wrapper__container--content__textarea">
+                <label for="articleDescription">Full Description</label>
+                {{ form_widget(formCreate.description) }}
+                {{ form_errors(formCreate.description)}}
+            </div>
+            {{ form_widget(formCreate.save, { 'attr': {'class': 'btn btn-primary btn-full'},'label':'Create' }) }}
+            {{ form_end(formCreate) }}
+        </div>
+    </div>
+</section>
+{% endblock %}

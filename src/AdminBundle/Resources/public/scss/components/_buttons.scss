@@ -21,3 +21,26 @@
 .btn-full {
   width: 100%;
 }
+
+.btn-action {
+  background-color: $mariner;
+  width: auto;
+  color: $white;
+  font-size: 0.75rem;
+  border: none;
+  padding: 10pt 20pt;
+  margin: 15pt 15pt 15pt 0;
+  float: left;
+  cursor: pointer;
+  @include border-radius(20pt);
+  @include transition(250ms);
+
+  &:hover {
+    @include box-shadow(0, 0, 5pt, 2pt, $silver);
+    @include transition(250ms);
+  }
+
+  & > i {
+    padding: 0 5pt 0 0;
+  }
+}

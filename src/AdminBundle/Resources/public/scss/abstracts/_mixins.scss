@@ -31,3 +31,18 @@
   -o-transition: $duration;
   transition: $duration;
 }
+
+@mixin rotate($degree) {
+  -webkit-transform: rotate($degree);
+  -moz-transform: rotate($degree);
+  -ms-transform: rotate($degree);
+  -o-transform: rotate($degree);
+  transform: rotate($degree);
+}
+
+@mixin user-select($selection) {
+  -webkit-user-select: $selection;
+  -moz-user-select: $selection;
+  -ms-user-select: $selection;
+  user-select: $selection;
+}
